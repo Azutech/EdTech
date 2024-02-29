@@ -12,7 +12,7 @@ export const database = async () => {
 	await mongoose
 		.connect(uri)
 		.then(() => {
-			logger.info('Connected to Transport-Dek Database');
+			logger.info(`Connected to Bob's Database`);
 		})
 		.catch((err) => {
 			logger.error(`Error connecting to the database. n${err}`);

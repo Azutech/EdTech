@@ -21,7 +21,7 @@ server.use('/api/v1', routes);
 
 server.get('/', (req: Request, res: Response) => {
 	res.status(StatusCodes.OK).json({
-		message: 'Welcome To Consonance Server 🚀🚀',
+		message: `Welcome To Bob's Server 🚀🚀`,
 	});
 });
 
