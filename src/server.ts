@@ -2,9 +2,12 @@ import express, { Application, Request, Response } from 'express';
 import { config } from 'dotenv';
 import { StatusCodes } from 'http-status-codes';
 import {database} from '../src/connection/database';
+import { logger } from './middlewares/logger';
 
 config();
 
+
+import { PORT } from '../src/utils/config';
 
 database().catch((err) => console.error(err));
 
@@ -23,3 +26,7 @@ server.get('/', (req: Request, res: Response) => {
 server.get('*', (req: Request, res: Response) => {
 	res.status(StatusCodes.NOT_FOUND).json({ message: 'route not found 🔎' });
 });
+
+server.listen(PORT, () => {
+    return logger.info(`Express is listening at http://localhost:${PORT}`);
+  });
