@@ -1,8 +1,13 @@
 import express, { Application, Request, Response } from 'express';
 import { config } from 'dotenv';
 import { StatusCodes } from 'http-status-codes';
+import {database} from '../src/connection/database';
 
 config();
+
+
+database().catch((err) => console.error(err));
+
 
 export const server: Application = express();
 server.use(express.json());
