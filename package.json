@@ -9,7 +9,7 @@
     "build": "rimraf dist && npx tsc",
     "dev": "nodemon src/server.ts",
     "lint": "eslint --ext .ts . --fix",
-    "start": "node --unhandled-rejections=strict dist/index.js"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "Azutech <azunna.onugha@gmail.com>",
